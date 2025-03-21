@@ -88,7 +88,7 @@ Ingress is an API object that manages external access to services using rules an
   ```sh
   kubectl logs pod-name
   ```
-- Describe Pod:  
+- Describe Pod:  The kubectl describe pod command is used to display detailed information about a specific pod in a Kubernetes cluster. 
   ```sh
   kubectl describe pod pod-name
   ```
