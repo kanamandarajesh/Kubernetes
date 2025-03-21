@@ -74,8 +74,11 @@ A DaemonSet ensures that a specific Pod runs on all (or some) nodes in the clust
   ```
 
 ### **17. What is a Persistent Volume (PV) and Persistent Volume Claim (PVC)?**  
-- **PV**: Storage provisioned by an administrator.  
+- **PV**: Storage provisioned by an administrator.
+A Persistent Volume (PV) is a storage resource in Kubernetes that provides durable storage to persist data beyond the lifecycle of individual pods.
+  
 - **PVC**: A request for storage by a Pod.
+A Persistent Volume Claim (PVC) is a request for storage by a user in Kubernetes, specifying the size and access mode required, and it binds to a suitable Persistent Volume (PV) to provide the requested storage.
 
 ### **18. How does Kubernetes handle networking?**  
 Kubernetes uses a flat networking model, allowing all Pods to communicate. It supports **CNI (Container Network Interface)** plugins like Flannel, Calico, and Cilium.
