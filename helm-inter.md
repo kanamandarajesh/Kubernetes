@@ -1,4 +1,4 @@
-**Helm Basic Interview Questions and Answers:
+## Helm Basic Interview Question and Answers:
 
 1. **What is Helm?**  
    Helm is a Kubernetes package manager that simplifies application deployment and management using charts.
