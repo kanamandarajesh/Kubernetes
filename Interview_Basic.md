@@ -162,3 +162,23 @@ kubectl apply -f my-crd.yaml
 Federation allows managing multiple clusters as a single unit for high availability and disaster recovery.
 
 ---
+
+Here are the key Kubernetes components explained in a single line:
+
+1. **Master Node**: The control plane that manages the Kubernetes cluster, including scheduling, API, and orchestration.
+2. **API Server**: Exposes the Kubernetes API, handling requests from clients (e.g., `kubectl`) and other components.
+3. **Scheduler**: Decides which node should run each pod based on resource availability and constraints.
+4. **Controller Manager**: Maintains the desired state of the cluster by continuously monitoring and correcting the state of resources.
+5. **Kubelet**: An agent running on each node, ensuring containers are running as expected based on pod specifications.
+6. **Kube Proxy**: Maintains network rules and enables communication to and from pods within the cluster.
+7. **Etcd**: A distributed key-value store used to store the cluster's configuration data and state.
+8. **Node**: A worker machine in the cluster that runs containers (pods) and provides the runtime environment.
+9. **Pod**: The smallest deployable unit in Kubernetes, which encapsulates one or more containers.
+10. **ReplicaSet**: Ensures a specified number of identical pods are running at any given time.
+11. **Deployment**: Manages the rollout and scaling of applications by controlling replica sets and pods.
+12. **Service**: Exposes a set of pods as a network service, enabling communication across the cluster.
+13. **Namespace**: Provides a way to partition the cluster into isolated environments for better resource management.
+14. **Ingress**: Manages external HTTP/HTTPS access to services within the cluster, typically for routing and load balancing.
+15. **ConfigMap**: Stores non-sensitive configuration data that can be used by containers.
+16. **Secret**: Stores sensitive data (like passwords and API keys) securely within Kubernetes.
+17. **StatefulSet**: Manages stateful applications, ensuring stable, unique network identifiers and persistent storage for pods.
