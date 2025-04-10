@@ -180,4 +180,3 @@ To make the Ingress resource work, you need to have an **Ingress Controller** ru
 
 Ingress is a powerful resource in Kubernetes that provides flexible traffic routing for HTTP and HTTPS traffic. It can be used for host-based or path-based routing, SSL termination, and other advanced routing capabilities. To use Ingress, you must also deploy an Ingress Controller in your cluster.
 
-Let me know if you need more details on any of these topics!
