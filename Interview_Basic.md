@@ -152,11 +152,11 @@ kubectl apply -f my-crd.yaml
 ```
 
 ### **29. How can you secure a Kubernetes cluster?**  
-- Enable RBAC  
-- Use Network Policies  
+- **Enable RBAC**: Define roles and only give users the access they need.  
+- **Use Network Policies**: Limit pod-to-pod communication based on need.  
 - Encrypt secrets  
-- Enable Audit Logs  
-- Use Pod Security Policies  
+- **Enable Audit Logs**: Helps trace what happened and when. 
+- **Use Pod Security Policies**: To enforce security standards.  
 
 ### **30. What is Kubernetes Federation?**  
 Federation allows managing multiple clusters as a single unit for high availability and disaster recovery.
@@ -182,3 +182,21 @@ Here are the key Kubernetes components explained in a single line:
 15. **ConfigMap**: Stores non-sensitive configuration data that can be used by containers.
 16. **Secret**: Stores sensitive data (like passwords and API keys) securely within Kubernetes.
 17. **StatefulSet**: Manages stateful applications, ensuring stable, unique network identifiers and persistent storage for pods.
+
+
+### 🩺 2. **What is Readiness and Liveness Probe in Kubernetes?**
+
+#### **Liveness Probe:**
+- Tells **if the app is still alive**.
+- If this fails, the pod is **restarted**.
+- Example use: app gets stuck in a deadlock.
+
+#### **Readiness Probe:**
+- Tells **if the app is ready to serve requests**.
+- If this fails, the pod is **removed from service/load balancer** but **not restarted**.
+- Example use: app is still starting up or loading configs.
+
+**Common Probe Types:**
+- HTTP: GET request to a specific path.
+- TCP: Opens a socket connection.
+- Command: Executes a script/command inside the container.
