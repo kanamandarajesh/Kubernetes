@@ -154,7 +154,7 @@ kubectl apply -f my-crd.yaml
 ### **29. How can you secure a Kubernetes cluster?**  
 - **Enable RBAC**: Define roles and only give users the access they need.  
 - **Use Network Policies**: Limit pod-to-pod communication based on need.  
-- Encrypt secrets  
+- **Encrypt secrets**:  
 - **Enable Audit Logs**: Helps trace what happened and when. 
 - **Use Pod Security Policies**: To enforce security standards.  
 
