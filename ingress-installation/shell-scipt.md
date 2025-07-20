@@ -1,8 +1,9 @@
 Yes! Here's a complete shell script to install the NGINX Ingress Controller on your Kubernetes cluster using kubectl (suitable for kubeadm-based bare metal or VM setups like yours):
 
-```
+
 ✅ install-ingress-nginx.sh
 
+```
 #!/bin/bash
 
 set -e
