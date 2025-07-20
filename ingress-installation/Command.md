@@ -19,8 +19,9 @@ You have a working network plugin (e.g., Calico).
 
 🔹 Step 1: Create a dedicated namespace
 
+```
 kubectl create namespace ingress-nginx
-
+```
 
 ---
 
@@ -28,7 +29,9 @@ kubectl create namespace ingress-nginx
 
 Use this command (for Kubernetes v1.25+):
 
+```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.9.6/deploy/static/provider/cloud/deploy.yaml
+```
 
 This will install:
 
@@ -44,7 +47,9 @@ RBAC resources
 
 🔹 Step 3: Verify the installation
 
+```
 kubectl get all -n ingress-nginx
+```
 
 You should see a pod like:
 
@@ -57,45 +62,70 @@ ingress-nginx-controller-xxxxxxxxxxxx   Running
 
 If you’re on bare metal or VMs:
 
+```
 kubectl edit svc ingress-nginx-controller -n ingress-nginx
+```
 
 Find this section:
 
+```
 type: LoadBalancer
+```
 
 Change it to:
 
+```
 type: NodePort
+```
 
 Save and exit.
 
 Then check which port was assigned:
 
+```
 kubectl get svc ingress-nginx-controller -n ingress-nginx
+```
 
 Look under the PORT(S) column — you’ll see something like:
 
+```
 80:32345/TCP
 443:32456/TCP
-
+```
 
 ---
 
 🔹 Step 5: Test with a sample app (Optional)
 
-If you want to test the Ingress, I can give you a sample app + ingress rule YAML.
-
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: myapp.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: my-service
+                port:
+                  number: 80
+```
 
 ---
 
 ✅ Summary of Commands
 
+```
 kubectl create namespace ingress-nginx
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.9.6/deploy/static/provider/cloud/deploy.yaml
 kubectl get pods -n ingress-nginx
 kubectl edit svc ingress-nginx-controller -n ingress-nginx   # Change to NodePort
-
-
----
-
-Would you like a sample NGINX web app + Ingress rule to test it.
+```
